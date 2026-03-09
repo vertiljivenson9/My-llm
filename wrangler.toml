@@ -1,0 +1,10 @@
+name = "gitforge-ai"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-09-23"
+
+[[ai]]
+binding = "AI"
+
+[[r2_buckets]]
+binding = "PROJECTS_BUCKET"
+bucket_name = "gitforge-temp-projects"

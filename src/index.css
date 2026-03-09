@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-50 text-surface-800 font-sans;
+    background-image: radial-gradient(at 30% 10%, hsla(240,80%,70%,0.07) 0px, transparent 55%),
+                      radial-gradient(at 85% 5%, hsla(230,75%,65%,0.05) 0px, transparent 50%),
+                      radial-gradient(at 0% 60%, hsla(245,85%,72%,0.04) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-forge-200 text-forge-900;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg
+           bg-forge-600 text-white font-medium text-sm
+           shadow-glow-sm hover:bg-forge-700 hover:shadow-glow
+           active:bg-forge-800 active:scale-[0.98]
+           transition-all duration-150 ease-out
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:hover:bg-forge-600 disabled:active:scale-100;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg
+           bg-white text-surface-700 font-medium text-sm
+           border border-surface-200 shadow-card
+           hover:bg-surface-50 hover:border-surface-300 hover:text-surface-900
+           active:bg-surface-100 active:scale-[0.98]
+           transition-all duration-150 ease-out
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg
+           text-surface-600 font-medium text-sm
+           hover:bg-surface-100 hover:text-surface-900
+           active:bg-surface-200 active:scale-[0.98]
+           transition-all duration-150 ease-out
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg
+           bg-red-600 text-white font-medium text-sm
+           hover:bg-red-700 active:bg-red-800 active:scale-[0.98]
+           transition-all duration-150 ease-out
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-lg
+           bg-white border border-surface-200 text-surface-800 text-sm
+           placeholder:text-surface-400
+           focus:outline-none focus:ring-2 focus:ring-forge-500 focus:ring-offset-1 focus:border-forge-400
+           hover:border-surface-300
+           transition-all duration-150;
+  }
+
+  .textarea-field {
+    @apply w-full px-4 py-3 rounded-xl
+           bg-white border border-surface-200 text-surface-800 text-sm
+           placeholder:text-surface-400
+           focus:outline-none focus:ring-2 focus:ring-forge-500 focus:ring-offset-1 focus:border-forge-400
+           hover:border-surface-300
+           transition-all duration-150 resize-none;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-surface-200 shadow-card;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-card-hover hover:border-surface-300 transition-all duration-200;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-forge {
+    @apply badge bg-forge-100 text-forge-700;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-700;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-700;
+  }
+
+  .badge-error {
+    @apply badge bg-red-100 text-red-700;
+  }
+
+  .badge-neutral {
+    @apply badge bg-surface-100 text-surface-600;
+  }
+
+  .step-circle {
+    @apply w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold shrink-0;
+  }
+
+  .step-active {
+    @apply step-circle bg-forge-600 text-white shadow-glow-sm;
+  }
+
+  .step-complete {
+    @apply step-circle bg-green-500 text-white;
+  }
+
+  .step-pending {
+    @apply step-circle bg-surface-200 text-surface-400;
+  }
+
+  .code-block {
+    @apply font-mono text-xs bg-surface-900 text-surface-100 rounded-xl p-4 overflow-x-auto;
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(90deg, #f0f2f8 25%, #e4e7f0 50%, #f0f2f8 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.6s infinite;
+  }
+
+  .forge-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #4d55e5 0%, #6272f1 50%, #8196f8 100%);
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-surface-500 hover:text-surface-900 transition-colors duration-150;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-widest text-surface-400 mb-3;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

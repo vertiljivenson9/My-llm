@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4d55e5"/>
+      <stop offset="100%" stop-color="#6272f1"/>
+    </linearGradient>
+    <linearGradient id="icon-grad" x1="10" y1="10" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#c7d7fd" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded square -->
+  <rect width="48" height="48" rx="12" fill="url(#bg-grad)"/>
+  <!-- Hexagon node top -->
+  <circle cx="24" cy="11" r="3.5" fill="url(#icon-grad)"/>
+  <!-- Hexagon node bottom-left -->
+  <circle cx="12.5" cy="30" r="3.5" fill="url(#icon-grad)"/>
+  <!-- Hexagon node bottom-right -->
+  <circle cx="35.5" cy="30" r="3.5" fill="url(#icon-grad)"/>
+  <!-- Lines connecting nodes -->
+  <line x1="24" y1="14.5" x2="12.5" y2="26.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-opacity="0.7"/>
+  <line x1="24" y1="14.5" x2="35.5" y2="26.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-opacity="0.7"/>
+  <line x1="15.5" y1="30" x2="32.5" y2="30" stroke="white" stroke-width="2" stroke-linecap="round" stroke-opacity="0.7"/>
+  <!-- Center merge node -->
+  <circle cx="24" cy="30" r="2.5" fill="white" fill-opacity="0.5"/>
+  <!-- Spark/bolt overlay -->
+  <path d="M26 19l-4 7h3.5l-2 7 6-9h-4L26 19z" fill="white" fill-opacity="0.95"/>
+</svg>
